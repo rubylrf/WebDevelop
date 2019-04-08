@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Using $formatters array to format form value</title>
+  <script src="../../app/scripts/vendor/angular.min.js"></script>
+</head>
+<body>
+  <p>Using $formatters array to format form value as lowercase</p>
+  <p></p>
+  <form name="registryForm" novalidate ng-app="demoApp" ng-init="username='PATRICK'">
+    <span>username in $scope: {{username}}</span><br>
+    <label name="username">Your username</label>
+    <input type="text" name="username" ng-model="username" placeholder="Your username" lowercase/>
+  </form>
+
+  <script>
+  'use strict';
+  angular.module('demoApp', [])
+    .directive('lowercase', ['$filter', '$log', function($filter, $log) {
+      return {
+        require: '?ngModel',
+        link: function(scope, iElement, iAttrs, ngModel) {
+          if (!ngModel) { return; }
+          ngModel.$formatters.unshift(function(viewValue) {
+            $log.log('$formatters called.');
+            return $filter('lowercase')(viewValue);
+          });
+          ngModel.$parsers.unshift(function(viewValue) {
+            $log.log('$parsers called.');
+          });
+        }
+      };
+    }]);
+  </script>
+</body>
+</html>

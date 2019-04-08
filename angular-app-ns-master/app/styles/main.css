@@ -1,0 +1,169 @@
+/* app css stylesheet */
+body {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  padding: 0px;
+  margin: 0;
+}
+h1 {
+  background: none repeat scroll 0 0 #A80104;
+  border-bottom: medium none;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  padding: 15px 20px;
+  text-align: center;
+}
+li {
+  list-style: none;
+}
+.swipe {
+  border-bottom: 1px solid #CCCCCC;
+}
+.swipe .title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 40px;
+  padding-top: 10px;
+  /*margin-left: 15px;*/
+}
+.tt-category {
+  background-color: #2D363F;
+  color: #fff;
+  margin: 0px;
+  font-size: 1.5em;
+  padding: 10px 5px;
+}
+.subsub-category {
+  background-color: #ffffbe;
+  color: #000;
+  
+}
+.sub-category {
+  background-color: #3076b7;
+  color: #fff;
+  font-size: 1.5em;
+  padding: 10px 0px 10px 40px;
+}
+.value, .edit {
+  float: right;
+}
+.swipe {
+  font-size: 1.5em;
+  padding-left: 45px;
+}
+.subGroup .title,
+.subInfoGroup .title{
+  /*padding-left: 25px;*/
+  padding-left: 20px;
+}
+.subGroup .subInfoGroup .title {
+  padding-left: 40px;
+}
+.list {
+  position: relative;
+  overflow: hidden;
+}
+.loading {
+  width: 100%;
+  height: 100%;
+  line-height: 506px;
+  background-color: #ccc;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0.6;
+  text-align: center;
+  overflow: hidden;
+  font-size: 3em;
+  font-weight: 700;
+  display: none;
+}
+.show {
+  display: block;
+}
+.login {
+  width: 400px;
+  margin: 0px auto;
+}
+.login label[for=email],
+.login label[for=password] {
+  width: 65px;
+}
+input[type=checkbox],
+#login_btn {
+  margin-left: 78px;
+}
+.login-form label {
+  display: inline-block;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+.login button {
+  margin-top: 10px;
+}
+/******************
+  Form Validation
+******************/
+.login input.ng-invalid.ng-dirty {
+  background-color: #FA787E;
+}
+.login .msg,
+.login .error {
+  color: #FA787E;
+}
+/** Log page */
+.log {
+  padding-left: 30px;
+}
+.log li {
+  list-style: inherit;
+}
+.log-title, .log-value {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+/** Animation */
+.item-change {
+  background-color: #66CD00
+}
+.swipe.item-change-add,
+.swipe.item-change-remove {
+  transition: 1s linear background-color;
+  -webkit-transition: 1s linear background-color;
+}
+.swipe.item-change-add.item-change-add-active {
+  background-color: #66CD00;
+}
+.swipe.item-change-remove.item-change-remove-active {
+  background-color: #ffffff;
+}
+.swipe.subsub-category.item-change-remove.item-change-remove-active {
+  background-color: #ffffbe;
+}
+/** Dialog */
+#flagMsg {
+  width: 98%;
+}
+.flag {
+  background-image: url('./images/flag.png');
+  background-repeat: no-repeat;
+  background-position: 5px;
+}
+.tcheck-access {
+  display: none;
+}
+
+/*new*/
+
+.subBar button{ margin-right: 5px; margin-top: 10px;}
+.filterField{ margin-top: 10px; margin-left: 5px;}
+.filterField span, .filterField label{ color: #fff; font-weight: bold;}
+.value button{ background: #2f7bbd; border-radius: 3px; box-shadow: 2px 2px 5px #ccc;}
+.value button.ng-pristine{ background:#52b266;border-radius: 3px; box-shadow: 2px 2px 5px #ccc;}
+.login-form button{background: #999; border-radius: 3px; box-shadow: 2px 2px 5px #ccc;}
+.login-form button#login_btn{background: #2f7bbd; border-radius: 3px; box-shadow: 2px 2px 5px #ccc;}

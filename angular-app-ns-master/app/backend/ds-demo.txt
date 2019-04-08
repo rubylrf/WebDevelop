@@ -1,0 +1,41 @@
+{
+    users: {
+        user_id: { /* name, email, etc */
+            groups: [group_id /*, ... */ ]
+        }
+    },
+
+    groups: {
+        group_id: { 
+           /* name, rights, etc */
+        } 
+        /*, ... */
+    }
+
+    discussions: {
+        discussion_id: {
+            document_id: "string",
+            groups: ['group_id' /*, ... */ ],
+            users: ['user_id' /*, ... */ ],
+            invitations: ['invite_id' /*, ... */ ],
+            messages: [
+                {
+                    timestamp, user_id, discussion_id, parent_id, text
+                }
+            ]
+        }
+    },
+
+
+    documents: {
+        document_id: {
+            title: "string",
+            created: "yyyy-mm-dd",
+            updated: "yyyy-mm-dd",
+            content: "blob_or_filename",
+            groups: ['group_id' /*, ... */ ],
+            users: ['user_id' /*, ... */ ],
+            owner: 'user_id'
+        }
+    }
+}

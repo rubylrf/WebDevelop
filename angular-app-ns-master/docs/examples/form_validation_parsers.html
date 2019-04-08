@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Using $parsers array to create a custom validation</title>
+  <style>
+  input.ng-invalid {
+    background-color: red;
+  }
+  </style>
+  <script src="../../app/scripts/vendor/angular.min.js"></script>
+</head>
+<body>
+  <p>Using $parsers array to create a custom validation</p>
+  <p>'patrick' is an invalid username, if we input this, it's background will be red.</p>
+  <p></p>
+  <form name="registryForm" novalidate ng-app="demoApp">
+    <label name="username">Your username</label>
+    <input type="text" name="username" ng-model="username" placeholder="Your username" available-username/>
+  </form>
+
+  <script>
+  'use strict';
+  angular.module('demoApp', [])
+  .value('username', {
+    'patrick': {
+      'gender': 'M',
+      'avatar': 'idenicon.png'
+    }
+  })
+  .directive('availableUsername', ['username', function(username) {
+    return {
+      require: '?ngModel',
+      link: function(scope, iElement, iAttrs, ngModel) {
+        if (!ngModel) { return; }
+        ngModel.$parsers.unshift(function(viewValue) {
+          if (username[viewValue]) {
+            // Invalid
+            ngModel.$setValidity('availableUsername', false);
+            return undefined;
+
+          } else {
+            ngModel.$setValidity('availableUsername', true);
+            return viewValue;
+          }
+        });
+      }
+    };
+  }]);
+  </script>
+</body>
+</html>

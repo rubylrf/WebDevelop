@@ -1,0 +1,115 @@
+{
+  "categories": {
+    "1": {
+      "id": "1",
+      "title": "Introduction-1",
+      "directItems": ["1", "2"],
+      "items": ["1", "2", "3"]
+    },
+    "2": {
+      "id": "2",
+      "title": "Features-2",
+      "directItems": ["4"],
+      "items": ["4", "5", "6", "7", "8", "9", "10"]
+    }
+  },
+
+  "items": {
+    "1": {
+      "id": "1",
+      "category": "1",
+      "title": "Model year-1",
+      "value": "2007",
+      "status": "na",
+      "flagMsg": "",
+      "fieldType": "list",
+      "fieldValue": "years"
+    },
+    "2": {
+      "id": "2",
+      "category": "1",
+      "title": "Version information-2",
+      "value": "1.0.0",
+      "status": "",
+      "flagMsg": "",
+      "children": ["3"]
+    },
+    "3": {
+      "id": "3",
+      "category": "1",
+      "parent": "2",
+      "title": "Release date-3",
+      "value": "20/03/2014",
+      "status": "flag",
+      "flagMsg": "Flag test",
+      "fieldType": "date"
+    },
+    "4": {
+      "id": "4",
+      "category": "2",
+      "title": "Exterior features-4",
+      "type": "sub-category",
+      "status": "",
+      "flagMsg": "",
+      "children": ["5", "6", "7"]
+    },
+    "5": {
+      "id": "5",
+      "category": "2",
+      "title": "See through roof-5",
+      "value": "See through roof",
+      "status": "",
+      "flagMsg": "",
+      "parent": "4"
+    },
+    "6": {
+      "id": "6",
+      "category": "2",
+      "title": "Solar powered roof panel-6",
+      "value": "Solar powered roof panel",
+      "status": "flag",
+      "flagMsg": "",
+      "parent": "4"
+    },
+    "7": {
+      "id": "7",
+      "category": "2",
+      "title": "Doors-7",
+      "value": "Doors",
+      "status": "",
+      "flagMsg": "",
+      "children": ["8", "9", "10"]
+    },
+    "8": {
+      "id": "8",
+      "category": "2",
+      "title": "door type-8",
+      "value": "door type",
+      "status": "na",
+      "flagMsg": "",
+      "parent": "7"
+    },
+    "9": {
+      "id": "9",
+      "category": "2",
+      "title": "door close system-9",
+      "value": "door close system",
+      "status": "flag",
+      "flagMsg": "",
+      "parent": "7"
+    },
+    "10": {
+      "id": "10",
+      "category": "2",
+      "title": "electric doors-10",
+      "value": "electric doors",
+      "status": "",
+      "flagMsg": "",
+      "parent": "7"
+    }
+  },
+
+  "data": {
+    "years": ["2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"]
+  }
+}

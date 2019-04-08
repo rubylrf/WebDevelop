@@ -1,0 +1,38 @@
+<div class="list" ng-init="authorize();">
+  <div style="float: left" class="filterField">
+    <span>Filter by:</span>
+    <input type="radio" ng-model="itemStatus" value="all" name="r_all" id="r_all"/>
+    <label for="r_all">All items</label>
+    <input type="radio" ng-model="itemStatus" value="flag" name="r_flag" id="r_flag"/>
+    <label for="r_flag">Flaged items</label>
+    <input type="radio" ng-model="itemStatus" value="na" name="r_na" id="r_na"/>
+    <label for="r_na">N/A items</label>
+  </div>
+  <div style="text-align: right;" class="subBar">
+    <span>
+      Current user: <b>{{email}}</b>
+    </span>
+    <button ng-click="logout();">Logout</button>
+  </div>
+  <ul data-role="listview" data-inset="true" data-shadow="false" id="specListWarp" class="list">
+    <li ng-repeat="category in categories" id="{{category.id}}" ng-controller="CategoryController" ng-if="category.directItems.length >
+      0">
+      <h2 class="tt-category">- {{category.title}}</h2>
+      <ul>
+        <li ng-repeat="item in childItems | itemFilter: itemStatus" ng-include="templateUrl" ng-controller="ItemController"></li>
+      </ul>
+    </li>
+  </ul>
+  <hr>
+  <button ng-click="viewLog();">View logs</button>
+
+  <!-- LOADING_INDICATOR_BEGIN -->
+  <div tcheck-loading-indicator loading-overlay="loadingOverlay"></div>
+  <!-- LOADING_INDICATOR_END -->
+
+  <!-- FLAG_DIALOG_BEGIN -->
+  <div id="flagDialog" style="display: none;">
+    <input type="text" id="flagMsg">
+  </div>
+  <!-- FLAG_DIALOG_END -->
+</div>

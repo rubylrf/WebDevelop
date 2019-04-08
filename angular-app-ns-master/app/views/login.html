@@ -1,0 +1,16 @@
+<div class="login" ng-init="checkLogin();">
+  <p class="msg">{{errorMsg}}</p>
+  <form action="" class="login-form" name="loginForm">
+    <label for="email" >Username:</label><input autofocus="autofocus" type="text" name="email" id="email" ng-model="email" required>
+    <label class="error" ng-show="loginForm.email.$error.required" style="padding: 0px;">Username required.</label><br>
+    <label for="password">Password:</label><input type="password" name="password" id="password" ng-model="password" required>
+    <label class="error" ng-show="loginForm.password.$error.required" style="padding: 0px;">Password required.</label><br>
+    <input type="checkbox" name="remember" id="remember" ng-model="isRememberMe"><label for="remember">Remember me</label><br>
+    <button ng-click="login();" id="login_btn" ng-disabled="loginDisabled">Login</button>
+    <button disabled="disabled">Register</button>
+  </form>
+  <p style="color: #CCCCCC">
+    * Admin: user@fabricgroup.com.au / user <br>
+    * Guest: guest@fabricgroup.com.au / guest
+  </p>
+</div>

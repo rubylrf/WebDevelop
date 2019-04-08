@@ -1,0 +1,22 @@
+<div ng-class="{ swipe: 1, 'subsub-category': item.children.length > 0, 'item-change': isItemChanged, flag: isFlag }">
+  <span class="title">{{item.title}}</span>
+  <span class="tcheck-access">{{item.flagMsg}}</span>
+  <span class="value">
+    <span ng-include="inputFieldTemplateUrl"></span>
+    <button ng-click="saveItemValue();" ng-disabled="isSaveBtnDisabled || isGuest">Save</button>
+    <button ng-disabled="isGuest" ng-model='item.flagMsg' dialog>Flag</button>
+  </span>
+</div>
+<ul class="subInfoGroup" ng-if="item.children.length > 0">
+  <li ng-repeat="item in childItems | itemFilter: itemStatus" ng-controller="ItemController">
+    <div ng-class="{ swipe: 1, 'item-change': isItemChanged, flag: isFlag }">
+      <span class="title">{{item.title}}</span>
+      <span class="tcheck-access">{{item.flagMsg}}</span>
+      <span class="value">
+        <span ng-include="inputFieldTemplateUrl"></span>
+        <button ng-click="saveItemValue();" ng-disabled="isSaveBtnDisabled || isGuest">Save</button>
+        <button ng-disabled="isGuest" ng-model='item.flagMsg' dialog>Flag</button>
+      </span>
+    </div>
+  </li>
+</ul>
